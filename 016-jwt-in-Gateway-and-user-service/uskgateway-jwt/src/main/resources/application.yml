@@ -1,0 +1,14 @@
+server:
+  port: 2222
+  
+eureka:  client:    service-url:      defaultZone: http://localhost:7777/eureka  instance:    prefer-ip-address: true
+      
+spring:  application:    name: usk-gateway
+  cloud:    gateway:      routes:
+      - id: user
+        uri: lb://user-service
+        predicates:
+        - Path=/user/**
+      - id: order
+        uri: lb://order-service
+        predicates:        - Path=/order/**
