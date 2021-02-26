@@ -1,0 +1,6 @@
+http://localhost:8081/user/users/test
+http://localhost:8082/order/orders/test
+
+
+http://localhost:7777/user/users/test
+http://localhost:7777/order/orders/test
