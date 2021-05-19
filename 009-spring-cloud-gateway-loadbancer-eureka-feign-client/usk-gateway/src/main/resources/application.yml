@@ -1,5 +1,5 @@
 server:
-  port: 7777
+  port: 8888
   
 eureka:
   client:
@@ -19,6 +19,6 @@ spring:
         predicates:
         - Path=/order/**
       - id: order
-        uri: lb://order-service
+        uri: lb://user-service
         predicates:
-        - Path=/order/**
+        - Path=/user/**
