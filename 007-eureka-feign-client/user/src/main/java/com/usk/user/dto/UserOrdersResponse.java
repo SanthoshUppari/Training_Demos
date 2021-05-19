@@ -24,7 +24,7 @@ public class UserOrdersResponse {
 	public void setOrders(List<OrderResponse> orders) {
 		this.orders = orders;
 	}
-	
+
 	
 
 }

@@ -9,9 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.usk.user.dto.OrderRequest;
 import com.usk.user.dto.OrderResponse;
-
-import feign.Param;
 
 //@FeignClient(value = "order-service", url = "http://localhost:8082/order/orders")
 @FeignClient(name = "http://ORDER-SERVICE/order/orders")
@@ -20,8 +19,11 @@ public interface OrderClient {
 	@GetMapping("/port")
 	public String getPortNo();
 	
+	@GetMapping("")
+	public List<OrderResponse> getOrdersByUserId();
+	
 	@GetMapping("/{userId}")
-	public List<OrderResponse> getOrdersByUserId(@Param("userId") @PathVariable String userId);
+	public List<OrderResponse> getOrdersByUserId(@PathVariable String userId); 
 	
 	@GetMapping("/byparam")
 	public List<OrderResponse> getAllByReqParam(@RequestParam String userId);
@@ -30,6 +32,6 @@ public interface OrderClient {
 	public List<OrderResponse> getAllByPostReqParam(@RequestParam String userId);
 	
 	@PostMapping("/{userId}")
-	public List<OrderResponse> getAllByPostReqBody(@PathVariable String userId, @RequestBody OrderResponse order);
+	public List<OrderResponse> getAllByPostReqBody(@PathVariable String userId, @RequestBody OrderRequest order);
 
 }
