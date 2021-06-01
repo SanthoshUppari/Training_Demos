@@ -1,4 +1,4 @@
-package com.opencodez.batch;
+package com.example.batchdemo.batch;
 
 import org.springframework.batch.core.BatchStatus;
 import org.springframework.batch.core.Job;
@@ -14,7 +14,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
 
-import com.opencodez.entity.Users;
+import com.example.batchdemo.entity.Users;
+
 
 @Component
 public class AccountKeeperJob extends JobExecutionListenerSupport {
@@ -38,7 +39,7 @@ public class AccountKeeperJob extends JobExecutionListenerSupport {
 	public Job accountKeeperJob() {
 
 		Step step = stepBuilderFactory.get("step-1")
-				.<Users, Users> chunk(1)
+				.<Users, Users> chunk(2)
 				.reader(new Reader(resource))
 				.processor(processor)
 				.writer(writer)

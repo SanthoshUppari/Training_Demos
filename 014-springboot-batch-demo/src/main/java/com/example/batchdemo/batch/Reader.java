@@ -1,4 +1,4 @@
-package com.opencodez.batch;
+package com.example.batchdemo.batch;
 
 import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper;
@@ -6,7 +6,8 @@ import org.springframework.batch.item.file.mapping.DefaultLineMapper;
 import org.springframework.batch.item.file.transform.DelimitedLineTokenizer;
 import org.springframework.core.io.Resource;
 
-import com.opencodez.entity.Users;
+import com.example.batchdemo.entity.Users;
+
 
 public class Reader extends FlatFileItemReader<Users> {
 	

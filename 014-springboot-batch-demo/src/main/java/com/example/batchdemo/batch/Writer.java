@@ -1,4 +1,4 @@
-package com.opencodez.batch;
+package com.example.batchdemo.batch;
 
 import java.util.List;
 
@@ -7,8 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.opencodez.entity.Users;
-import com.opencodez.repository.UsersRepository;
+import com.example.batchdemo.entity.Users;
+import com.example.batchdemo.repository.UsersRepository;
+
 
 @Component
 public class Writer implements ItemWriter<Users>{

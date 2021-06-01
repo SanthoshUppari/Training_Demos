@@ -1,4 +1,4 @@
-package com.opencodez.batch;
+package com.example.batchdemo.batch;
 
 import java.util.Optional;
 
@@ -6,8 +6,9 @@ import org.springframework.batch.item.ItemProcessor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.opencodez.entity.Users;
-import com.opencodez.repository.UsersRepository;
+import com.example.batchdemo.entity.Users;
+import com.example.batchdemo.repository.UsersRepository;
+
 
 @Component
 public class Processor implements ItemProcessor<Users, Users> {
