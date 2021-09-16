@@ -1,0 +1,20 @@
+Start Apache Zookeeper
+		Run ZooKeeper by opening a new cmd and type zkserver.
+		OR
+		.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+
+
+Start Apache Kafka
+		.\bin\windows\kafka-server-start.bat .\config\server.properties
+		
+		broker.id=2
+		listeners=PLAINTEXT://localhost:9093
+		log.dir=/tmp/kafka-logs-2
+		.\bin\windows\kafka-server-start.bat .\config\server-1.properties
+		
+Next start the Spring Boot Application by running it as a Java Application.
+
+Also Start the consumer listening to the usk_test
+		.\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic usk_test --from-beginning
+		
+hit the url as follows- http://localhost:8081/usk-kafka/producer?message=Santhosh
