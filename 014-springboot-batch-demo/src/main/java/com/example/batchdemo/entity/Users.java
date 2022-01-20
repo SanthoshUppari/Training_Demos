@@ -1,6 +1,7 @@
 package com.example.batchdemo.entity;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -19,6 +20,8 @@ public class Users {
 	private String dept;
 	
 	private BigDecimal account;
+	
+	private LocalDateTime createdTime;
 
 	public Long getUserId() {
 		return userId;
@@ -50,6 +53,14 @@ public class Users {
 
 	public void setAccount(BigDecimal account) {
 		this.account = account;
+	}
+
+	public LocalDateTime getCreatedTime() {
+		return createdTime;
+	}
+
+	public void setCreatedTime(LocalDateTime createdTime) {
+		this.createdTime = createdTime;
 	}
 	
 }

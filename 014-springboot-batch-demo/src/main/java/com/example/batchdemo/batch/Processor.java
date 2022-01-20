@@ -1,5 +1,6 @@
 package com.example.batchdemo.batch;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 import org.springframework.batch.item.ItemProcessor;
@@ -19,6 +20,7 @@ public class Processor implements ItemProcessor<Users, Users> {
 	@Override
 	public Users process(Users user) throws Exception {
 		Optional<Users> userFromDb = userRepo.findById(user.getUserId());
+		user.setCreatedTime(LocalDateTime.now()); 
 		if(userFromDb.isPresent()) {
 			user.setAccount(user.getAccount().add(userFromDb.get().getAccount()));
 		}

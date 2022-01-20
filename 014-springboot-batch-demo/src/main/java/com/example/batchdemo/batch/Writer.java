@@ -21,6 +21,7 @@ public class Writer implements ItemWriter<Users>{
 	@Transactional
 	public void write(List<? extends Users> users) throws Exception {
 		repo.saveAll(users);
+		Thread.sleep(5000);
 	}
 	
 }
