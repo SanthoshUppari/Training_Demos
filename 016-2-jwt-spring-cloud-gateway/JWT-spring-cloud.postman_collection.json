@@ -1,0 +1,170 @@
+{
+	"info": {
+		"_postman_id": "0741ad1c-d303-41e8-99fa-887911d42ff9",
+		"name": "JWT-spring-cloud",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get-Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\" : \"Santhosh\",\r\n    \"lastName\" : \"U\",\r\n    \"email\" : \"u.s@gmail.com\",\r\n    \"password\" : \"Santhosh\",\r\n    \"role\"  : \"ADMIN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/auth/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get-Token",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\" : \"Santhosh\",\r\n    \"lastName\" : \"U\",\r\n    \"email\" : \"u.s@gmail.com\",\r\n    \"password\" : \"Santhosh\",\r\n    \"role\"  : \"ADMIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/auth/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "transfer-encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 23 Feb 2022 17:16:43 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"accessToken\": \"eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjEiLCJzdWIiOiJ1LnNAZ21haWwuY29tIiwiaWF0IjoxNjQ1NjM2NjAzLCJleHAiOjE2NDU3MjMwMDN9.NV-UnTTkCQfc2IyYenx5mUy9b9pZvOvgD0U3ilG2QkRVAuaxhdeLX5BpQy_UKDckgccVLSAA9E0kaMaP-gos8g\",\n    \"refreshToken\": \"eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjEiLCJzdWIiOiJ1LnNAZ21haWwuY29tIiwiaWF0IjoxNjQ1NjM2NjAzLCJleHAiOjE2NDYwNjg2MDN9.ia2F3_YX8MqJrGVExfpX5CFwTuvcuGCpOwZkg4lPZYL7JfOijRfLRfKqlFMDvXV1nQrW1t-K-MkmWxfxZlJgEQ\"\n}"
+				}
+			]
+		},
+		{
+			"name": "localhost:8081/users/secure",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjEiLCJzdWIiOiJ1LnNAZ21haWwuY29tIiwiaWF0IjoxNjQ1NjM2NjAzLCJleHAiOjE2NDYwNjg2MDN9.ia2F3_YX8MqJrGVExfpX5CFwTuvcuGCpOwZkg4lPZYL7JfOijRfLRfKqlFMDvXV1nQrW1t-K-MkmWxfxZlJgEQ",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:8081/users/secure",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"users",
+						"secure"
+					],
+					"query": [
+						{
+							"key": "Authorization",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "localhost:8081/users/secure",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjEiLCJzdWIiOiJ1LnNAZ21haWwuY29tIiwiaWF0IjoxNjQ1NjM2NjAzLCJleHAiOjE2NDYwNjg2MDN9.ia2F3_YX8MqJrGVExfpX5CFwTuvcuGCpOwZkg4lPZYL7JfOijRfLRfKqlFMDvXV1nQrW1t-K-MkmWxfxZlJgEQ",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:8081/users/secure",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"users",
+								"secure"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 23 Feb 2022 17:20:10 GMT"
+						},
+						{
+							"key": "content-length",
+							"value": "25"
+						}
+					],
+					"cookie": [],
+					"body": "Secure endpoint available"
+				}
+			]
+		}
+	]
+}
